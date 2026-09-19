@@ -1,4 +1,4 @@
-\# F1 Racing Performance Analytics (2019-2023)
+# F1 Racing Performance Analytics (2019-2023)
 
 
 
@@ -6,73 +6,73 @@ An end-to-end analytics project on Formula 1 racing performance, built entirely 
 
 
 
-\## Dashboard
+## Dashboard
 
-!\[Dashboard Screenshot](dashboard/dashboard\_screenshot.png)
+![Dashboard Screenshot](dashboard/dashboard_screenshot.png)
 
 
 
-\## Project Overview
+## Project Overview
 
 This project analyzes real F1 data to answer key performance questions:
 
-\- Which constructors dominated the 2019-2023 seasons?
+- Which constructors dominated the 2019-2023 seasons?
 
-\- How did the 2023 championship battle unfold race by race?
+- How did the 2023 championship battle unfold race by race?
 
-\- Which teams have the fastest pit crews?
+- Which teams have the fastest pit crews?
 
-\- Which races produced the most unpredictable, high-scoring drives?
-
-
-
-\## Tools Used
-
-\- \*\*Python\*\* (requests, pandas, matplotlib) — API data collection, cleaning, and exploratory analysis
-
-\- \*\*SQL\*\* (PostgreSQL) — window functions for lap-by-lap position tracking, pit stop analysis
-
-\- \*\*Tableau\*\* — interactive dashboard
+- Which races produced the most unpredictable, high-scoring drives?
 
 
 
-\## Key Findings
+## Tools Used
 
-\- Red Bull and Mercedes led constructor points from 2019-2023, with Red Bull's dominance peaking in 2023
+- **Python** (requests, pandas, matplotlib) — API data collection, cleaning, and exploratory analysis
 
-\- Max Verstappen's 2023 championship progression shows a dramatic, early points lead that widened every race
+- **SQL** (PostgreSQL) — window functions for lap-by-lap position tracking, pit stop analysis
 
-\- Red Bull's pit crew ranked among the fastest, averaging under 23 seconds per stop (excluding red-flag-affected stops)
-
-\- The Belgian Grand Prix (Round 13, 2023) showed the highest lap-by-lap position churn of the season, driven by a rain-affected red flag restart
+- **Tableau** — interactive dashboard
 
 
 
-\## Project Structure
+## Key Findings
 
-\- `data/` — collected datasets (race results, lap times, pit stops)
+- Red Bull and Mercedes led constructor points from 2019-2023, with Red Bull's dominance peaking in 2023
 
-\- `notebooks/` — Python data collection and analysis (Jupyter notebooks)
+- Max Verstappen's 2023 championship progression shows a dramatic, early points lead that widened every race
 
-\- `sql/` — SQL queries (pit stop performance, position battles)
+- Red Bull's pit crew ranked among the fastest, averaging under 23 seconds per stop (excluding red-flag-affected stops)
 
-\- `dashboard/` — Tableau dashboard (.twbx) and screenshot
-
-
-
-\## Data Source
-
-\[Jolpica-F1 API](https://github.com/jolpica/jolpica-f1) — a free, open replacement for the retired Ergast F1 API
+- The Belgian Grand Prix (Round 13, 2023) showed the highest lap-by-lap position churn of the season, driven by a rain-affected red flag restart
 
 
 
-\## How to Run
+## Project Structure
 
-1\. Clone this repo
+- `data/` — collected datasets (race results, lap times, pit stops)
 
-2\. Run `01\_data\_collection.ipynb` to pull fresh data from the API (or use the CSVs already saved in `data/`)
+- `notebooks/` — Python data collection and analysis (Jupyter notebooks)
 
-3\. Run `02\_sql\_analysis.ipynb` to load data into PostgreSQL for SQL analysis
+- `sql/` — SQL queries (pit stop performance, position battles)
 
-4\. Open `dashboard/f1\_dashboard.twbx` in Tableau (Public or Desktop) to view the interactive dashboard
+- `dashboard/` — Tableau dashboard (.twbx) and screenshot
+
+
+
+## Data Source
+
+[Jolpica-F1 API](https://github.com/jolpica/jolpica-f1) — a free, open replacement for the retired Ergast F1 API
+
+
+
+## How to Run
+
+1. Clone this repo
+
+2. Run `01_data_collection.ipynb` to pull fresh data from the API (or use the CSVs already saved in `data/`)
+
+3. Run `02_sql_analysis.ipynb` to load data into PostgreSQL for SQL analysis
+
+4. Open `dashboard/f1_dashboard.twbx` in Tableau (Public or Desktop) to view the interactive dashboard
 

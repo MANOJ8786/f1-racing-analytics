@@ -1,0 +1,12 @@
+-- Average pit stop duration by driver (excluding red-flag/repair outliers)
+SELECT 
+    driver_id,
+    COUNT(*) as total_stops,
+    ROUND(AVG(duration_seconds)::numeric, 2) as avg_duration,
+    ROUND(MIN(duration_seconds)::numeric, 2) as fastest_stop
+FROM pit_stops
+WHERE duration_seconds < 60
+GROUP BY driver_id
+HAVING COUNT(*) >= 10
+ORDER BY avg_duration ASC
+LIMIT 15;

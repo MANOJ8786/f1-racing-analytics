@@ -1,0 +1,20 @@
+-- Total positions gained/lost per driver per race (lap-by-lap cumulative churn)
+WITH lap_position_changes AS (
+    SELECT 
+        round,
+        driver_id,
+        lap,
+        position,
+        LAG(position) OVER (PARTITION BY round, driver_id ORDER BY lap) as prev_position
+    FROM lap_times
+)
+SELECT 
+    driver_id,
+    round,
+    SUM(CASE WHEN prev_position - position > 0 THEN prev_position - position ELSE 0 END) as positions_gained,
+    SUM(CASE WHEN position - prev_position > 0 THEN position - prev_position ELSE 0 END) as positions_lost
+FROM lap_position_changes
+WHERE prev_position IS NOT NULL
+GROUP BY driver_id, round
+ORDER BY positions_gained DESC
+LIMIT 15;
